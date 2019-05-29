@@ -1,13 +1,6 @@
 import React from "react";
 import "./SearchBar.css";
 
-const sortByOptions = {
-  "Best Match": "best_match",
-  "Highest Rated": "rating",
-  "Most Reviewed": "review_count",
-  "Most Recent": "date"
-};
-
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -20,12 +13,10 @@ class SearchBar extends React.Component {
     this.handleTermChange = this.handleTermChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
-    this.handleSortByChange = this.handleSortByChange.bind(this);
 
     this.sortByOptions = sortByOptions;
   }
 
-  //returns the current CSS class for a sorting option, provding visual feedback
   getSortByClass(sortByOption) {
     if (this.state.sortBy === sortByOption) {
       return "active";
